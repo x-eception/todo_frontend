@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AboutPage    from './pages/AboutPage';
+import GoogleLogin  from './Auth/GoogleLogin';
+import PhoneLogin   from './Auth/PhoneLogin';
+import TaskList     from './components/TaskList';
+import { AuthProvider } from './context/AuthContext';    // ✅ import
+import { TaskProvider } from './context/TaskContext';    // ✅ import
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>           {/* ✅ wrap with AuthProvider */}
+      <TaskProvider>         {/* ✅ wrap with TaskProvider */}
+        <Router>
+          <Routes>
+            <Route path="/"              element={<AboutPage />} />
+            <Route path="/google-login" element={<GoogleLogin />} />
+            <Route path="/phone-login"  element={<PhoneLogin />} />
+            <Route path="/tasks"        element={<TaskList />} />
+          </Routes>
+        </Router>
+      </TaskProvider>
+    </AuthProvider>
   );
 }
 

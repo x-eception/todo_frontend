@@ -1,0 +1,108 @@
+/* === Container === */
+.task-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+}
+
+.task-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.task-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-container li {
+  background: #f5f5f5;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === Buttons === */
+.task-container button {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #10b981;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* === Split Screen Layout === */
+.task-screen {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 1rem;
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+}
+
+.task-left {
+  flex: 1;
+  border-right: 1px solid #ccc;
+  padding-right: 1rem;
+}
+
+.task-right {
+  flex: 1;
+  padding-left: 1rem;
+  border-left: 1px solid #eee;
+  background-color: #fafafa;
+}
+
+/* === Right-side Bulk Task List === */
+.bulk-task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bulk-task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.bulk-task-list span {
+  flex: 1;
+  word-break: break-word;
+  font-weight: 500;
+}
+
+.bulk-task-list input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-left: 1rem;
+}
+
+/* === Completed Task Style === */
+.bulk-task-list .done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* === Responsive for Small Screens === */
+@media (max-width: 768px) {
+  .task-screen {
+    flex-direction: column;
+  }
+
+  .task-left,
+  .task-right {
+    padding: 0;
+    border: none;
+  }
+}

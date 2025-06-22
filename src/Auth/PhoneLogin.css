@@ -1,0 +1,86 @@
+/* Split‑screen container like AboutPage/GoogleLogin */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  flex: 1;
+  background-color: #00b894;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+/* Card styling matches GoogleLogin */
+.login-card {
+  width: 90%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 1rem;
+  color: #2d3436;
+  font-size: 1.5rem;
+}
+
+.login-card .error {
+  color: #d63031;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.primary-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background-color: #019b77;
+}
+
+.primary-btn:disabled {
+  background-color: #b2bec3;
+  cursor: not-allowed;
+}
+
+/* Responsive: stack panels on smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-panel {
+    height: 150px;
+  }
+  .right-panel {
+    flex: none;
+    padding: 2rem 0;
+  }
+}
