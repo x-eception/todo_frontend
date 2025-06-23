@@ -1,3 +1,4 @@
+// src/pages/AboutPage.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
@@ -20,6 +21,7 @@ const AboutPage = () => {
     <div className="container">
       {/* Left: Login Options */}
       <div className="left-panel">
+        <div className="app-brand">ToDo AI</div>
         <h2>Choose The Login Options Below</h2>
         <div className="checkbox-group">
           <label>
@@ -45,10 +47,18 @@ const AboutPage = () => {
 
       {/* Right: About Info */}
       <div className="right-panel">
-        <img src="\images\OIP.webp" alt="About" />
+        <img src="/images/OIP.webp" alt="About" />
         <p>
           Welcome to our productivity app! Plan tasks, manage time, and reach your goals efficiently.
         </p>
+        <a
+          href="/privacy-policy.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="privacy-link"
+        >
+          Privacy Policy
+        </a>
       </div>
     </div>
   );
