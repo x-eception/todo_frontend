@@ -1,4 +1,3 @@
-// src/pages/AboutPage.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
@@ -43,6 +42,16 @@ const AboutPage = () => {
             Login with Mobile
           </label>
         </div>
+
+        {/* ✅ Privacy Policy Link */}
+        <a
+          href="/privacy-policy.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#fff", textDecoration: "underline", marginTop: "20px" }}
+        >
+          Privacy Policy
+        </a>
       </div>
 
       {/* Right: About Info */}
@@ -51,14 +60,6 @@ const AboutPage = () => {
         <p>
           Welcome to our productivity app! Plan tasks, manage time, and reach your goals efficiently.
         </p>
-        <a
-          href="/privacy-policy.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="privacy-link"
-        >
-          Privacy Policy
-        </a>
       </div>
     </div>
   );
